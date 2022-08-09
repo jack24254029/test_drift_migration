@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "description": "This file contains a serialized version of schema entities for moor.",
+    "version": "0.1.0-dev-preview"
+  },
+  "entities": [
+    {
+      "id": 0,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "partner",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "uid",
+            "getter_name": "uid",
+            "moor_type": "ColumnType.integer",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "explicit_pk": [
+          "uid"
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "references": [
+        0
+      ],
+      "type": "table",
+      "data": {
+        "name": "glucose_mapping",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "uid",
+            "getter_name": "uid",
+            "moor_type": "ColumnType.integer",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "REFERENCES partner (uid) ON DELETE CASCADE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "unknown"
+            ]
+          }
+        ],
+        "is_virtual": false,
+        "explicit_pk": [
+          "uid"
+        ]
+      }
+    }
+  ]
+}
